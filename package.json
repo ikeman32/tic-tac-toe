@@ -25,7 +25,7 @@
     "build-react": "react-scripts build",
     "test-react": "react-scripts test --env=jsdom",
     "eject-react": "react-scripts eject",
-    "build-electron": "electron-builder",
+    "build-electron": "electron-builder -mwl",
     "build": "yarn build-react && yarn build-electron",
     "start": "concurrently \"cross-env BROWSER=none yarn start-react\" \"wait-on http://localhost:3000 && electron .\""
   },
