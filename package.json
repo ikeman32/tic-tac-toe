@@ -1,12 +1,26 @@
 {
-  "name": "react-electron",
+  "name": "tic-tac-toe",
   "version": "0.1.0",
-  "description": "Simple boilerplate for developing an Electron app with React",
-  "author": "willjw3",
+  "description": "Your classic Tic Tac Toe game",
+  "author": "David Isakson <david.isakson.ii@gmail.com>",
   "build": {
-    "appId": "react.electron",
+    "appId": "react.tic-tac-toe",
+    "productName": "Tic Tac Toe",
+    "linux": {
+      "category": "Game",
+      "icon": "build/icon.png",
+      "packageCategory": "game",
+      "maintainer": "David Isakson <david.isakson.ii@gmail.com>",
+      "asar": true,
+      "target": [
+        "deb",
+        "tar.xz"
+      ],
+      "synopsis": "Your basic tic tacS toe game"
+    },
     "win": {
-      "icon": "build/icon.png"
+      "icon": "build/icon.png",
+      "target": "nsis"
     }
   },
   "main": "public/electron.js",
@@ -25,7 +39,7 @@
     "build-react": "react-scripts build",
     "test-react": "react-scripts test --env=jsdom",
     "eject-react": "react-scripts eject",
-    "build-electron": "electron-builder -mwl",
+    "build-electron": "electron-builder -wl",
     "build": "yarn build-react && yarn build-electron",
     "start": "concurrently \"cross-env BROWSER=none yarn start-react\" \"wait-on http://localhost:3000 && electron .\""
   },
